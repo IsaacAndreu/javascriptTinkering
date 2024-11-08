@@ -27,7 +27,7 @@ export default {
     async fetchUsers() {
       try {
         const response = await axios.get("https://dummyjson.com/users");
-        this.users = response.data.users; // Assegura't que accedeixes a la propietat correcta
+        this.users = response.data.users;
       } catch (error) {
         console.error("Error:", error);
       }

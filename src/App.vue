@@ -27,8 +27,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  min-height: 100vh; /* Assegura't que el footer estigui al final */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Flexbox per organitzar el contingut */
+  flex-direction: column;
 }
 </style>

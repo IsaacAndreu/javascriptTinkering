@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import CalculatorPage from "@/components/CalculatorPage.vue"; // Ajusta el camí segons calgui
+import CalculatorPage from "@/components/CalculatorPage.vue";
 
 describe("CalculatorPage", () => {
     let wrapper;
@@ -73,30 +73,28 @@ describe("CalculatorPage", () => {
         await wrapper.vm.setOperation("+");
         await wrapper.vm.appendNumber("5");
         await wrapper.vm.calculate();
-        expect(wrapper.find(".display").text()).toBe("5"); // No hauria de canviar perquè no hi ha primer valor
+        expect(wrapper.find(".display").text()).toBe("5");
     });
 
     it("mostra correctament l'historial d'operacions", async () => {
-        // Realitza una sèrie de càlculs per generar historial
         await wrapper.vm.appendNumber("3");
         await wrapper.vm.setOperation("+");
         await wrapper.vm.appendNumber("4");
-        await wrapper.vm.calculate(); // 3 + 4 = 7
+        await wrapper.vm.calculate();
         expect(wrapper.find(".display").text()).toBe("7");
 
         await wrapper.vm.appendNumber("10");
         await wrapper.vm.setOperation("-");
         await wrapper.vm.appendNumber("2");
-        await wrapper.vm.calculate(); // 10 - 2 = 8
+        await wrapper.vm.calculate();
         expect(wrapper.find(".display").text()).toBe("8");
 
         await wrapper.vm.appendNumber("6");
         await wrapper.vm.setOperation("*");
         await wrapper.vm.appendNumber("3");
-        await wrapper.vm.calculate(); // 6 * 3 = 18
+        await wrapper.vm.calculate();
         expect(wrapper.find(".display").text()).toBe("18");
 
-        // Verifica l'historial
         const historyItems = wrapper.findAll(".history li");
         expect(historyItems).toHaveLength(3);
         expect(historyItems[0].text()).toBe("3 + 4 = 7");

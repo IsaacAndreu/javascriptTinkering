@@ -20,37 +20,36 @@ export default {
   background-color: #333;
   color: white;
   padding: 10px;
-  display: flex; /* Flexbox per al disseny horitzontal */
-  justify-content: center; /* Centra el contingut horitzontalment */
+  display: flex;
+  justify-content: center;
 }
 
 .navbar ul {
   list-style: none;
   padding: 0;
-  display: flex; /* Flexbox per als elements de la llista */
-  gap: 20px; /* Espai entre els elements */
+  display: flex;
+  gap: 20px;
 }
 
 .navbar li {
-  margin: 0; /* Elimina el marge per a un millor alineament */
+  margin: 0;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
-  padding: 8px 16px; /* Espai al voltant dels enllaços */
-  transition: background-color 0.3s; /* Efecte de transició per al fons */
+  padding: 8px 16px;
+  transition: background-color 0.3s;
 }
 
 .navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Fons al passar el ratolí */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .navbar ul {
-    flex-direction: column; /* Canvia a vertical en pantalles petites */
-    align-items: center; /* Centra els elements */
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>

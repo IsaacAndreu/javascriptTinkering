@@ -20,9 +20,9 @@ export default {
   name: "CommentsPage",
   data() {
     return {
-      comments: null, // `null` to differentiate between loading and empty state
-      loading: false, // To indicate when comments are being fetched
-      error: null, // Holds any error messages
+      comments: null,
+      loading: false,
+      error: null,
     };
   },
   methods: {
@@ -37,7 +37,7 @@ export default {
         this.comments = await response.json();
       } catch (error) {
         this.error = "No s'han pogut carregar els comentaris. Torneu-ho a intentar més tard.";
-        this.comments = []; // Set to empty to avoid "loading" message persisting
+        this.comments = [];
       } finally {
         this.loading = false;
       }

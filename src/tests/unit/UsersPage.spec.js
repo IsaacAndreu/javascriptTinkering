@@ -38,9 +38,8 @@ describe("UsersPage", () => {
         mock.onGet("https://dummyjson.com/users").reply(200, usersData);
 
         const wrapper = mount(UsersPage);
-        await flushPromises(); // Espera que es resolguin totes les promeses
+        await flushPromises();
 
-        // Comprovem que es mostren els usuaris correctament
         const userItems = wrapper.findAll("li");
         expect(userItems.length).toBe(usersData.users.length);
 
